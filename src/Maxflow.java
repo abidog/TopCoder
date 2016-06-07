@@ -1,10 +1,9 @@
 
-
 import java.lang.*;
 
 import java.util.LinkedList;
 
-class MaxFlow
+public class Maxflow
 {
     static final int V = 6; //Number of vertices in graph
 
@@ -113,7 +112,7 @@ class MaxFlow
                 {0, 0, 0, 7, 0, 4},
                 {0, 0, 0, 0, 0, 0}
         };
-        MaxFlow m = new MaxFlow();
+        Maxflow m = new Maxflow();
 
         System.out.println("The maximum possible flow is " +
                 m.fordFulkerson(graph, 0, 5));
