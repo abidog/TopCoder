@@ -16,12 +16,27 @@ public class IntegerPartition {
             partition2(n-i, i, prefix + " " + i);
         }
     }
+    // 0 7
+    // 1 6
+    // 2 5
+    // 3 4
+    // 4 3
+    // 5 2
+    // 6 1
 
+    // 7 + par (0, 7)
+    // 6 + pari (1, 6)
+    // 5 + par (2,5)
+    // 4 + par (3,4)
+    // 3 + par (4,3)
 
     public static void main(String[] args) {
         IntegerPartition ip = new IntegerPartition();
-        int N = Integer.parseInt(args[0]);
-        ip.partition2(N);
+        //int N = Integer.parseInt(args[0]);
+        int N = 7;
+        List<List<Integer>> res = new ArrayList<>();
+        ip.partition(N, N, res, new ArrayList<>());
+        System.out.println("selam");
     }
 
 
