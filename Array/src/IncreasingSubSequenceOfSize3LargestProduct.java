@@ -11,6 +11,7 @@ public class IncreasingSubSequenceOfSize3LargestProduct {
             } else {
                 lgi[i] = max;
             }
+
             if (arrayLong[i] > max) {
                 max = arrayLong[i];
             }
