@@ -20,48 +20,20 @@ public class ClosestPair {
         Point[] closest = new Point[2];
         Comparator xComp = new Comparator<Point>(){
             public int compare(Point p1, Point p2) {
-                 if (p1.x < p2.x) {
-                     return -1;
+                 if (p1.x != p2.x) {
+                     return p1.x - p2.x;
                  }
-
-                 if (p1.x > p2.x) {
-                     return 1;
-                 }
-
-                 if (p1.y < p2.y ) {
-                     return -1;
-                 }
-
-
-                 if (p1.y > p2.y) {
-                     return 1;
-                 }
-
-                return 0;
+                return p1.y - p2.y;
 
             }
          };
 
         Comparator yComp = new Comparator<Point>(){
             public int compare(Point p1, Point p2) {
-                if (p1.y < p2.y) {
-                    return -1;
+                if (p1.y != p2.y) {
+                    return p1.y - p2.y;
                 }
-
-                if (p1.y > p2.y) {
-                    return 1;
-                }
-
-                if (p1.x < p2.x ) {
-                    return -1;
-                }
-
-
-                if (p1.x > p2.x) {
-                    return 1;
-                }
-
-                return 0;
+                return p1.x - p2.x;
 
             }
         };

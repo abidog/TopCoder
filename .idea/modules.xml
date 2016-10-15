@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ACM/ACM.iml" filepath="$PROJECT_DIR$/ACM/ACM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backtracking/Backtracking.iml" filepath="$PROJECT_DIR$/Backtracking/Backtracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ElementsOfProgrammingInterviews/ElementsOfProgrammingInterviews.iml" filepath="$PROJECT_DIR$/ElementsOfProgrammingInterviews/ElementsOfProgrammingInterviews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Graph/Graph.iml" filepath="$PROJECT_DIR$/Graph/Graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interview/Interview.iml" filepath="$PROJECT_DIR$/Interview/Interview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaAPI/JavaAPI.iml" filepath="$PROJECT_DIR$/JavaAPI/JavaAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SRM 554 DIV 2/SRM 554 DIV 2.iml" filepath="$PROJECT_DIR$/SRM 554 DIV 2/SRM 554 DIV 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocialNetworks/SocialNetworks.iml" filepath="$PROJECT_DIR$/SocialNetworks/SocialNetworks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TopCoder.iml" filepath="$PROJECT_DIR$/TopCoder.iml" />
+    </modules>
+  </component>
+</project>

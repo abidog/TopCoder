@@ -7,8 +7,26 @@ public class Combinatoric {
         List<String> result = new ArrayList<>();
         char[] temp = "abc".toCharArray();
         c.permute(temp, result);
+        c.combinatoric(5);
+        c.getCombina(5);
         System.out.println(result);
     }
+
+    public long[][] combinatoric(int n) {
+        long[][] nCk = new long[n][n];
+        nCk[0][0] = 1;
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (i == j || j == 0) {
+                    nCk[i][j] = 1;
+                } else {
+                    nCk[i][j] += nCk[i - 1][j - 1] + nCk[i - 1][j];
+                }
+            }
+        }
+        return nCk;
+    }
+
 
     public long[][] getCombina(int n) {
 
@@ -30,7 +48,7 @@ public class Combinatoric {
 
 
     public void permute(char[] string, List<String> result) {
-           backtrack(string, 0, result);
+        backtrack(string, 0, result);
     }
 
     private void backtrack(char[] string, int start, List<String> result) {

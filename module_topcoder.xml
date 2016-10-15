@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_topcoder" default="compile.module.topcoder">
+  <dirname property="module.topcoder.basedir" file="${ant.file.module_topcoder}"/>
+  
+  <property name="module.jdk.home.topcoder" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.topcoder" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.topcoder" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.topcoder" value="-encoding UTF-8 -source 8 ${compiler.args}"/>
+  
+  <property name="topcoder.output.dir" value="${module.topcoder.basedir}/out/production/TopCoder"/>
+  <property name="topcoder.testoutput.dir" value="${module.topcoder.basedir}/out/test/TopCoder"/>
+  
+  <path id="topcoder.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="topcoder.module.production.classpath">
+    <path refid="${module.jdk.classpath.topcoder}"/>
+  </path>
+  
+  <path id="topcoder.runtime.production.module.classpath">
+    <pathelement location="${topcoder.output.dir}"/>
+  </path>
+  
+  <path id="topcoder.module.classpath">
+    <path refid="${module.jdk.classpath.topcoder}"/>
+    <pathelement location="${topcoder.output.dir}"/>
+  </path>
+  
+  <path id="topcoder.runtime.module.classpath">
+    <pathelement location="${topcoder.testoutput.dir}"/>
+    <pathelement location="${topcoder.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.topcoder">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.topcoder">
+    <patternset refid="excluded.from.module.topcoder"/>
+  </patternset>
+  
+  <path id="topcoder.module.sourcepath">
+    <dirset dir="${module.topcoder.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.topcoder" depends="compile.module.topcoder.production,compile.module.topcoder.tests" description="Compile module TopCoder"/>
+  
+  <target name="compile.module.topcoder.production" depends="register.custom.compilers" description="Compile module TopCoder; production classes">
+    <mkdir dir="${topcoder.output.dir}"/>
+    <javac2 destdir="${topcoder.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.topcoder}/javac">
+      <compilerarg line="${compiler.args.topcoder}"/>
+      <bootclasspath refid="topcoder.module.bootclasspath"/>
+      <classpath refid="topcoder.module.production.classpath"/>
+      <src refid="topcoder.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.topcoder"/>
+    </javac2>
+    
+    <copy todir="${topcoder.output.dir}">
+      <fileset dir="${module.topcoder.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.topcoder.tests" depends="register.custom.compilers,compile.module.topcoder.production" description="compile module TopCoder; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.topcoder" description="cleanup module">
+    <delete dir="${topcoder.output.dir}"/>
+    <delete dir="${topcoder.testoutput.dir}"/>
+  </target>
+</project>

@@ -8,7 +8,7 @@ public class BIT {
         return bit;
     }
     private void updateValue(int[] bit, int val, int index) {
-        while(index <= bit.length) {
+        while(index < bit.length) {
             bit[index] += val;
             index = getNext(index);
         }

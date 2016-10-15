@@ -1,22 +1,23 @@
 
-import java.util.Arrays;
+import java.util.*;
 
 
 public class BPM {
 
     public static void main(String[] args) {
         int bpGraph[][] = {  {0, 1, 1, 0, 0, 0},
-            {1, 0, 0, 1, 0, 0},
-            {0, 0, 1, 0, 0, 0},
-            {0, 0, 1, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 1}
+                             {1, 0, 0, 1, 0, 0},
+                             {0, 0, 1, 0, 0, 0},
+                             {0, 0, 1, 1, 0, 0},
+                             {0, 0, 0, 0, 0, 0},
+                             {0, 0, 0, 0, 0, 1}
         };
 
         System.out.println(new BPM().bpm(bpGraph));
     }
 
     public int bpm(int [][] jobToApp) {
+
 
         int max = 0;
         boolean[] v = new boolean[jobToApp.length];

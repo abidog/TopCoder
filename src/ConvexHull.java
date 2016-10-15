@@ -145,7 +145,7 @@ public class ConvexHull {
 
         return minPoint;
     }
-    //  res < 0, clockwise, ==0 colinear > 0 anticlockwise
+    //  res < 0 clockwise, ==0 colinear,  > 0 anticlockwise
     private double getTurn(Point a, Point b, Point c) {
         return (b.x - a.x) * (c.y - a.y) - (b.y - a.y )*(c.x -a.x);
     }
